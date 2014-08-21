@@ -1,7 +1,17 @@
 #Code Louisville 
 
-## Basic ghost wrapper
-This is a wrapper to use ghost as a module.
+## Installation
+This is a wrapper to use Ghost as a npm module. By doing this, we keep the `/core` files untouched while versioning our `/content` directory.
 
-- `npm install` to install ghost
-- Run `node index.js`
+To install, simply run:
+
+#### Quickstart:
+
+1. `npm install -g grunt-cli`
+1. `npm install`
+1. `npm install` to install ghost
+1. Run `node index.js`
+
+---
+
+**NOTE: This project is a work in progress.**
