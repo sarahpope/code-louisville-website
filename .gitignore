@@ -4,6 +4,7 @@ npm-debug.log
 node_modules
 bower_components
 .bowerrc
+vendor
 
 # Ghost DB file
 *.db

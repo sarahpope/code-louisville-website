@@ -8,7 +8,16 @@
   },
   "author": "Eric Rowan",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/username/repository.git"
+  },
   "dependencies": {
-    "ghost": "^0.5.1-2"
+    "ghost": "^0.5.1-2",
+    "grunt": "^0.4.5",
+    "grunt-contrib-sass": "^0.8.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-notify": "^0.3.1",
+    "load-grunt-tasks": "^0.6.0"
   }
 }
