@@ -14,4 +14,10 @@ To install, simply run:
 
 ---
 
+#### Contributing
+
+1. `gem install bourbon neat bitters`
+
+---
+
 **NOTE: This project is a work in progress.**

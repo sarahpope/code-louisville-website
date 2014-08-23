@@ -6,10 +6,10 @@ module.exports = function(grunt) {
 
         // Set dynamic path variables
         project: {
-            base: 'content/themes/code-louisville/assets',
-            css: '<%= project.base %>/css',
-            scss: '<%= project.base %>/scss',
-            js: '<%= project.base %>/js'
+            base: 'content/themes/code-louisville',
+            css: '<%= project.base %>/assets/css',
+            scss: '<%= project.base %>/assets//scss',
+            js: '<%= project.base %>/assets//js',
         },
 
         // Sass preprocessing and watch/livereload
@@ -20,18 +20,16 @@ module.exports = function(grunt) {
             },
         },
         watch: {
-            sass: {
-                // We watch and compile sass files as normal but don't live reload here
-                files: ['<%= project.scss %>/**/*.scss'],
-                tasks: ['sass'],
-            },
+            // We watch and compile sass files as normal but don't live reload here
+            files: ['<%= project.scss %>/**/*.scss','<%= project.base %>/**/*.hbs'],
+            tasks: ['sass'],
             livereload: {
                 // Here we watch the files the sass task will compile to
                 // These files are sent to the live reload server after sass compiles to them
                 options: { livereload: true },
-                files: ['<%= project.css %>/*'],
-            }
-        }
+                files: ['<%= project.css %>/*','<%= project.base %>/**/*.hbs'],
+            },
+        },
 
     });
 

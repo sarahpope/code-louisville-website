@@ -1,0 +1,10 @@
+// FOOTER
+
+footer.site-footer {
+    font-family: $sans-serif;
+    background: $medium-gray;
+    color: darken($light-gray, 25);
+    a {
+        color: white;
+    }
+}

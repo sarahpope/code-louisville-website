@@ -1,6 +1,145 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:700,900|Lora:400,700,400italic);
+
+// $visual-grid: true;
+
+// NORMALIZE.CSS RESET
+@import 'partials/normalize';
+
+// VENDOR IMPORTS (https://github.com/thoughtbot/bitters#installation)
 @import 'vendor/bourbon/bourbon';
 @import 'vendor/base/grid-settings';
 @import 'vendor/neat/neat';
 @import 'vendor/base/base';
 
-// @import 'partials/casper';
+
+// CUSTOM PARTIALS IMPORT
+@import 'partials/navigation';
+@import 'partials/footer';
+
+
+// GLOBAL SETTINGS
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+// TYPOGRAPHY
+
+h1, h2, h3, h4, h5, h6 {
+    margin: .5em 0;
+    font-weight: 700;
+    strong {
+        font-weight: 900;
+    }
+}
+
+p {
+    font-family: $serif;
+}
+
+p, li, pre {
+    font-size: 1.1em;
+}
+
+blockquote {
+    font-size: 1.5em;
+    font-style: italic;
+    border: none;
+    margin: .5em 0;
+    padding: 0;
+}
+
+pre {
+    word-wrap: break-word;
+}
+
+.page-title,
+.post-title {
+    font-size: 2.75em;
+    font-weight: 900;
+}
+
+
+
+// LAYOUT
+
+.container,
+.wrapper {
+    @include outer-container;
+    padding: 2em 0;
+}
+
+main.content {
+    @include outer-container;
+    padding: 0 0 4em;
+
+    article.post,
+    article.page {
+        @include span-columns(7);
+    }
+
+    aside.sidebar {
+        @include span-columns(3);
+        @include shift(2);
+        margin-top: 2em;
+    }
+
+}
+
+
+header.hero {
+    background: $medium-gray;
+    color: white;
+    padding: 2em 0;
+
+    .hero-title {
+        @include span-columns(9);
+        font-size: 3em;
+    }
+
+}
+
+
+
+// SECTIONS
+
+.section-title, .page-title {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 2px solid rgba(0,0,0,0.05);
+}
+
+.home-template {
+    .section-title {
+        // text-align: center;
+    }
+}
+
+.courses {
+    background: $red;
+    color: white;
+
+    article {
+        @include span-columns(4);
+    }
+
+    a {
+        color: $yellow;
+    }
+
+}
+
+.testimonial {
+    background: $light-gray;
+}
+
+.benefits {
+    article {
+        @include span-columns(6);
+    }
+    article:nth-child(odd) {
+        @include shift(6);
+    }
+}

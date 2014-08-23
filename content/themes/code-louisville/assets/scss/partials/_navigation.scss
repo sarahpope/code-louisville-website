@@ -1,0 +1,59 @@
+// Header
+
+nav.main-nav {
+
+    .wrapper {
+        padding: 0;
+    }
+
+    background: $dark-gray;
+    font-family: $sans-serif;
+
+    .site-title,.main-nav {
+        float: left;
+    }
+
+    .site-title {
+        float: left;
+        font-size: 1em;
+        font-weight: bold;
+        margin: 0;
+        line-height: 0;
+        a {
+            display: inline-block;
+            color: white;
+            padding: 2em 0;
+        }
+    }
+
+    .primary-links {
+        float: left;
+        margin-left: 4em;
+    }
+
+    .secondary-links {
+        float: right;
+        opacity: .5;
+    }
+
+    li {
+        float: left;
+        list-style-type: none;
+        font-size: .8em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 0 2em 0 0;
+        line-height: 0;
+
+        a {
+            display: inline-block;
+            color: white;
+            padding: 2.5em 0;
+            &:hover {
+                color: $base-accent-color;
+            }
+        }
+
+    }
+
+}

@@ -1,4 +1,7 @@
 {
-  "name": "Code Louisville",
-  "version": "0.1.0"
+    "name": "Code Louisville",
+    "version": "0.1.0",
+    "scripts": {
+        // "postinstall" : "(cd node_modules/indatus-frontend/; ../.bin/bower install)"
+    }
 }
