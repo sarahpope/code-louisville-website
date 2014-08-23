@@ -13,13 +13,13 @@ This repo is essentially a wrapper for Ghost. As of v0.4.2 Ghost has been able t
 To run this website, you will need to have the following installed on your system:
 
 1. Node.js [download here](http://nodejs.org/download/)
+1. `npm install -g grunt-cli`
 
 ---
 
 #### Quickstart
 
-1. `npm install -g grunt-cli`
-1. `npm install`
+1. Clone (to run) or fork (to contribute) the repo `git@github.com:erow80/code-louisville-website.git`
 1. `npm install` to install ghost
 1. To start the custom server and run Ghost, Run `node index.js`
 1. Browse to `http://127.0.0.1:2368/`
