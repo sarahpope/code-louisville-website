@@ -3,11 +3,18 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
+<header class="page">
+    <div class="wrapper">
+        <h1 class="page-title">Blog</h1>
+    </div>
+</header>
+
 <main class="content" role="main">
 
     <div class="wrapper">
 
         <article class="{{post_class}}">
+
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
 
@@ -70,7 +77,7 @@
         {{/post}}
         </article>
 
-        {{> "sidebar"}}
+        {{> sidebar}}
 
     </div>
 

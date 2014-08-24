@@ -14,8 +14,9 @@
 
 // CUSTOM PARTIALS IMPORT
 @import 'partials/navigation';
+@import 'partials/header';
 @import 'partials/footer';
-
+@import 'partials/typography';
 
 // GLOBAL SETTINGS
 
@@ -24,51 +25,12 @@ body {
     padding: 0;
 }
 
-
-// TYPOGRAPHY
-
-h1, h2, h3, h4, h5, h6 {
-    margin: .5em 0;
-    font-weight: 700;
-    strong {
-        font-weight: 900;
-    }
-}
-
-p {
-    font-family: $serif;
-}
-
-p, li, pre {
-    font-size: 1.1em;
-}
-
-blockquote {
-    font-size: 1.5em;
-    font-style: italic;
-    border: none;
-    margin: .5em 0;
-    padding: 0;
-}
-
-pre {
-    word-wrap: break-word;
-}
-
-.page-title,
-.post-title {
-    font-size: 2.75em;
-    font-weight: 900;
-}
-
-
-
 // LAYOUT
 
 .container,
 .wrapper {
     @include outer-container;
-    padding: 2em 0;
+    padding: 4em 0;
 }
 
 main.content {
@@ -83,20 +45,12 @@ main.content {
     aside.sidebar {
         @include span-columns(3);
         @include shift(2);
-        margin-top: 2em;
-    }
+        margin-top: .5em;
 
-}
+        li {
+            line-height: 2;
+        }
 
-
-header.hero {
-    background: $medium-gray;
-    color: white;
-    padding: 2em 0;
-
-    .hero-title {
-        @include span-columns(9);
-        font-size: 3em;
     }
 
 }
@@ -105,21 +59,21 @@ header.hero {
 
 // SECTIONS
 
-.section-title, .page-title {
-    padding-bottom: 1em;
-    margin-bottom: 1em;
-    border-bottom: 2px solid rgba(0,0,0,0.05);
-}
-
 .home-template {
-    .section-title {
-        // text-align: center;
+    .page-title, .section-title {
+        padding-bottom: 1em;
+        margin: .5em 0 1em;
+        border-bottom: 2px solid rgba(0,0,0,0.05);
     }
 }
 
 .courses {
     background: $red;
-    color: white;
+    color: $light-gray;
+
+    .section-title {
+        color: $medium-gray;
+    }
 
     article {
         @include span-columns(4);
@@ -127,12 +81,23 @@ header.hero {
 
     a {
         color: $yellow;
+        border-bottom: 1px solid $yellow;
+
+        &:hover {
+            color: darken($yellow, 15);
+            border-bottom: 1px solid darken($yellow, 15);
+        }
+
     }
 
 }
 
 .testimonial {
     background: $light-gray;
+
+    .wrapper {
+        padding: 2em 0;
+    }
 }
 
 .benefits {
@@ -142,4 +107,26 @@ header.hero {
     article:nth-child(odd) {
         @include shift(6);
     }
+}
+
+.blog {
+    .wrapper {
+        max-width: em(700);
+    }
+
+    background: $light-gray;
+
+    article.post {
+        margin: 4em 0;
+    }
+
+    .post-title a {
+        color: $base-font-color;
+        font-weight: 900;
+    }
+
+}
+
+.post-template {
+    background: $light-gray;
 }

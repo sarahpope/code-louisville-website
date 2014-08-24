@@ -1,14 +1,17 @@
 {{!< default}}
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
+{{! The main content area on the homepage }}
+
     <header class="hero">
         <div class="wrapper">
-            <h2 class="hero-title">Code Louisville teaches <strong>coding skills</strong> to anyone ready to start a new career.<br /><a href="">Get involved!</a></h2>
+            <h2 class="hero-title">Code Louisville is a community-driven program that teaches <strong>coding skills</strong> to anyone ready to start a new career.</h2>
+            <h3 class="hero-subtitle">We&apos;re looking for <a href="/learn">students</a>, <a href="/teach">mentors</a> and <a href="/hire">employers</a>.</h3>
         </div>
     </header>
 
 
-    <section class="courses">
+    <section id="courses" class="courses">
         <div class="wrapper">
             <h2 class="section-title">Current Courses: Fall 2014</h2>
             <article>
@@ -29,41 +32,38 @@
         </div>
     </section>
 
-
-    <section class="testimonial">
-        <div class="wrapper">
-            <blockquote>Did you know: It is physically impossible to frown while riding a scooter. <cite>Blockquote</cite></blockquote>
-        </div>
-    </section>
-
+    {{> testimonial}}
 
     <section class="benefits">
         <div class="wrapper">
             <h2 class="section-title">Why Code Louisville?</h2>
             <article>
                 <h3 class="article-title">Small Class Sizes</h3>
-                <p>You probably haven't heard of them swag locavore, scenester four loko normcore banjo mustache twee. 3 wolf moon Neutra synth small batch, tote bag direct trade selfies iPhone Thundercats scenester PBR&B semiotics bitters. Cred wayfarers photo booth, blog fanny pack direct trade tattooed.</p>
+                <p>You probably haven&apos;t heard of them swag locavore, scenester four loko normcore banjo mustache twee. 3 wolf moon Neutra synth small batch, tote bag direct trade selfies iPhone Thundercats scenester PBR&B semiotics bitters. Cred wayfarers photo booth, blog fanny pack direct trade tattooed.</p>
             </article>
             <article>
                 <h3 class="article-title">Personalized Instruction</h3>
-                <p>You probably haven't heard of them swag locavore, scenester four loko normcore banjo mustache twee. 3 wolf moon Neutra synth small batch, tote bag direct trade selfies iPhone Thundercats scenester PBR&B semiotics bitters. Cred wayfarers photo booth, blog fanny pack direct trade tattooed.</p>
+                <p>You probably haven&apos;t heard of them swag locavore, scenester four loko normcore banjo mustache twee. 3 wolf moon Neutra synth small batch, tote bag direct trade selfies iPhone Thundercats scenester PBR&B semiotics bitters. Cred wayfarers photo booth, blog fanny pack direct trade tattooed.</p>
             </article>
             <article>
                 <h3 class="article-title">Absolutely Free</h3>
-                <p>You probably haven't heard of them swag locavore, scenester four loko normcore banjo mustache twee. 3 wolf moon Neutra synth small batch, tote bag direct trade selfies iPhone Thundercats scenester PBR&B semiotics bitters. Cred wayfarers photo booth, blog fanny pack direct trade tattooed.</p>
+                <p>You probably haven&apos;t heard of them swag locavore, scenester four loko normcore banjo mustache twee. 3 wolf moon Neutra synth small batch, tote bag direct trade selfies iPhone Thundercats scenester PBR&B semiotics bitters. Cred wayfarers photo booth, blog fanny pack direct trade tattooed.</p>
             </article>
             <article>
                 <h3 class="article-title">Something Else</h3>
-                <p>You probably haven't heard of them swag locavore, scenester four loko normcore banjo mustache twee. 3 wolf moon Neutra synth small batch, tote bag direct trade selfies iPhone Thundercats scenester PBR&B semiotics bitters. Cred wayfarers photo booth, blog fanny pack direct trade tattooed.</p>
+                <p>You probably haven&apos;t heard of them swag locavore, scenester four loko normcore banjo mustache twee. 3 wolf moon Neutra synth small batch, tote bag direct trade selfies iPhone Thundercats scenester PBR&B semiotics bitters. Cred wayfarers photo booth, blog fanny pack direct trade tattooed.</p>
             </article>
         </div>
     </section>
 
 
-{{! The main content area on the homepage }}
-{{!-- <main id="content" class="content" role="main">
 
-    {{! The tag below includes the post loop - partials/loop.hbs }}
-    {{> "loop"}}
+    <section id="blog" class="blog">
+        <div class="wrapper">
+            <h2 class="section-title">Code Louisville Blog</h2>
 
-</main> --}}
+            {{! The tag below includes the post loop - partials/loop.hbs }}
+            {{> "loop"}}
+
+        </div>
+    </section>

@@ -1,0 +1,48 @@
+// HEADER
+
+.home-template,
+.archive-template,
+.post-template,
+.page {
+
+    header:not(.post-header) {
+        background: $medium-gray;
+        color: white;
+
+        &.hero {
+            padding: 2em 0;
+
+            a {
+                border-bottom: 3px solid darken($base-link-color, 15);
+                padding-bottom: 3px;
+            }
+
+            .hero-title, .hero-subtitle {
+                @include span-columns(9);
+                font-size: 3em;
+            }
+
+            .hero-subtitle {
+                font-size: 2em;
+            }
+
+        }
+
+        &.page {
+            color: $blue;
+
+            .wrapper {
+                padding: 1em 0;
+            }
+
+            h1.page-title {
+                font-family: $serif;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+            }
+
+        }
+
+    }
+
+}
