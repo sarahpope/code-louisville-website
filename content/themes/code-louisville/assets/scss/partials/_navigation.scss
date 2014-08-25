@@ -1,10 +1,20 @@
-// Header
+// HEADER
+
 
 nav.main-nav {
     border-bottom: 2px solid lighten($dark-gray, 5);
 
     .wrapper {
-        padding: 0;
+        padding: 0 2em;
+
+        @include media($large-screen) {
+            padding: 0 4em;
+        }
+
+        @include media($x-large-screen) {
+            padding: 0;
+        }
+
     }
 
     background: $dark-gray;
@@ -28,13 +38,24 @@ nav.main-nav {
     }
 
     .primary-links {
-        float: left;
-        margin-left: 4em;
+        float: right;
+
+        @include media($medium-screen) {
+            float: left !important;
+            margin-left: 2em;
+        }
+
     }
 
     .secondary-links {
-        float: right;
+        display: none;
         opacity: .5;
+
+        @include media($medium-screen) {
+            display: block;
+            float: right;
+        }
+
     }
 
     li {
@@ -43,7 +64,7 @@ nav.main-nav {
         font-size: .8em;
         text-transform: uppercase;
         letter-spacing: 1px;
-        margin: 0 2em 0 0;
+        margin: 0 0 0 2em;
         line-height: 0;
 
         a {

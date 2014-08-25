@@ -1,5 +1,6 @@
 // HEADER
 
+
 .home-template,
 .archive-template,
 .post-template,
@@ -10,7 +11,6 @@
         color: white;
 
         &.hero {
-            padding: 2em 0;
 
             a {
                 border-bottom: 3px solid darken($base-link-color, 15);
@@ -18,12 +18,16 @@
             }
 
             .hero-title, .hero-subtitle {
-                @include span-columns(9);
-                font-size: 3em;
+                @include media($large-screen) {
+                    @include span-columns(9);
+                    font-size: 3em;
+                }
             }
 
             .hero-subtitle {
-                font-size: 2em;
+                @include media($large-screen) {
+                    font-size: 2em;
+                }
             }
 
         }
@@ -32,7 +36,12 @@
             color: $blue;
 
             .wrapper {
-                padding: 1em 0;
+                padding: 1em 2em;
+
+                @include media($large-screen) {
+                    padding: 1em 0;
+                }
+
             }
 
             h1.page-title {

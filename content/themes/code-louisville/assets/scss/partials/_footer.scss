@@ -1,5 +1,6 @@
 // FOOTER
 
+
 footer.site-footer {
     font-family: $sans-serif;
     background: $medium-gray;
@@ -7,4 +8,18 @@ footer.site-footer {
     a {
         color: white;
     }
+
+    article {
+
+        @include media($medium-screen) {
+            @include span-columns(3);
+
+            &.copyright {
+                @include shift(2);
+            }
+
+        }
+
+    }
+
 }

@@ -1,0 +1,82 @@
+// HOMEPAGE
+
+
+.home-template {
+    .page-title, .section-title {
+        padding-bottom: 1em;
+        margin: .5em 0 1em;
+        border-bottom: 2px solid rgba(0,0,0,0.05);
+    }
+}
+
+
+.courses {
+    background: $red;
+    color: $light-gray;
+
+    .section-title {
+        color: $medium-gray;
+    }
+
+    article {
+
+        @include media($medium-screen) {
+            @include span-columns(4);
+        }
+
+    }
+
+    a {
+        color: $yellow;
+        border-bottom: 1px solid $yellow;
+
+        &:hover {
+            color: darken($yellow, 15);
+            border-bottom: 1px solid darken($yellow, 15);
+        }
+
+    }
+
+}
+
+
+.benefits {
+    article {
+        @include span-columns(12);
+
+        @include media($medium-screen) {
+            @include span-columns(6);
+        }
+
+
+    }
+    article:nth-child(odd) {
+        @include media($medium-screen) {
+            @include shift(6);
+        }
+    }
+}
+
+
+.blog {
+    .wrapper {
+        max-width: em(700);
+    }
+
+    background: $light-gray;
+
+    article.post {
+        margin: 4em 0;
+    }
+
+    .post-title a {
+        color: $base-font-color;
+        font-weight: 900;
+    }
+
+}
+
+
+.testimonial {
+    background: $light-gray;
+}

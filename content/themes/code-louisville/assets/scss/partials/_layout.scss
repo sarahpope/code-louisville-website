@@ -1,0 +1,60 @@
+// LAYOUT
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.wrapper {
+    @include outer-container;
+    padding: 2em;
+
+    @include media($large-screen) {
+        padding: 4em;
+    }
+
+    @include media($x-large-screen) {
+        padding: 4em 0;
+    }
+
+}
+
+
+main.content {
+    @include outer-container;
+    padding: 0 0 4em;
+
+    article.post,
+    article.page {
+
+        @include media($large-screen) {
+            @include span-columns(7);
+        }
+
+    }
+
+    aside.sidebar {
+
+        border-top: 2px solid rgba(0,0,0,0.05);
+
+        @include media($large-screen) {
+            @include span-columns(3);
+            @include shift(2);
+        }
+
+        margin-top: 2em;
+
+        li {
+            line-height: 2;
+        }
+
+    }
+
+}
+
+
+.post-template {
+    background: $light-gray;
+}
