@@ -4,22 +4,18 @@
 footer.site-footer {
     font-family: $sans-serif;
     background: $medium-gray;
-    color: darken($light-gray, 25);
-    a {
-        color: white;
-    }
+    color: white;
 
     article {
 
         @include media($medium-screen) {
             @include span-columns(3);
-
-            &.copyright {
-                @include shift(2);
-            }
-
         }
 
+    }
+
+    small {
+        color: lighten($medium-gray, 25);
     }
 
 }

@@ -1,7 +1,7 @@
 // HOMEPAGE
 
 
-.home-template {
+.home-template, .tag-template, .author-template {
     .page-title, .section-title {
         padding-bottom: 1em;
         margin: .5em 0 1em;
@@ -48,13 +48,8 @@
             @include span-columns(6);
         }
 
+    }
 
-    }
-    article:nth-child(odd) {
-        @include media($medium-screen) {
-            @include shift(6);
-        }
-    }
 }
 
 
