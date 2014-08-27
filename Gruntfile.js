@@ -34,7 +34,7 @@ module.exports = function(grunt) {
         },
 
 
-        // DEPLOYMENT
+        // DEPLOYMENT (remote)
         sshconfig: {
             server: {
                 host: '162.243.105.72',
@@ -67,9 +67,21 @@ module.exports = function(grunt) {
                     // 'forever list',
                 ].join(' && '),
                 options: {
-                    config: 'server',
-                },
-            },
+                    config: 'server'
+                }
+            }
+        },
+
+
+        // RSYNC to securely transfer db file(s)
+        rsync: {
+            stage: {
+                options: {
+                    src: "content/data/*.db",
+                    dest: "/var/www/code-louisville/content/data",
+                    host: "erowan@162.243.105.72"
+                }
+            }
         }
 
     });
@@ -84,9 +96,9 @@ module.exports = function(grunt) {
     grunt.registerTask('default',['watch']);
 
     // Run build task
-    grunt.registerTask('build',['sshexec:deploy']);
+    grunt.registerTask('build',['rsync:stage','sshexec:build']);
 
     // Run deploy task
-    grunt.registerTask('deploy',['sshexec:deploy']);
+    grunt.registerTask('deploy',['rsync:prod','sshexec:deploy']);
 
 }
