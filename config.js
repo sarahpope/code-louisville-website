@@ -9,7 +9,7 @@ config = {
     // ### Development **(default)**
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
-        url: 'http://code-louisville.ericrowan.com',
+        url: 'http://my-ghost-blog.com',
 
         // Example mail config
         // Visit http://docs.ghost.org/mail for instructions
@@ -48,7 +48,7 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        url: 'http://code-louisville.ericrowan.com',
+        url: 'http://my-ghost-blog.com',
         mail: {},
         database: {
             client: 'sqlite3',
@@ -62,6 +62,9 @@ config = {
             host: '127.0.0.1',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
             port: '2368'
+        },
+        paths: {
+            contentPath: path.join(__dirname, '/content/')
         }
     },
 
@@ -82,7 +85,10 @@ config = {
             host: '127.0.0.1',
             port: '2369'
         },
-        logging: false
+        logging: false,
+        paths: {
+            contentPath: path.join(__dirname, '/content/')
+        }
     },
 
     // ### Travis
