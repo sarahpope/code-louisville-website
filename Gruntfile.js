@@ -12,6 +12,7 @@ module.exports = function(grunt) {
             js: '<%= project.base %>/assets//js',
         },
 
+
         // Sass preprocessing and watch/livereload
         sass: {
             dev: {
@@ -19,6 +20,7 @@ module.exports = function(grunt) {
                 dest: '<%= project.css %>/main.css',
             },
         },
+
         watch: {
             // We watch and compile sass files as normal but don't live reload here
             files: ['<%= project.scss %>/**/*.scss','<%= project.base %>/**/*.hbs'],
@@ -31,6 +33,45 @@ module.exports = function(grunt) {
             },
         },
 
+
+        // DEPLOYMENT
+        sshconfig: {
+            server: {
+                host: '162.243.105.72',
+                username: 'erowan',
+                // password: '',
+                agent: process.env.SSH_AUTH_SOCK,
+            },
+        },
+        sshexec: {
+            build: {
+                command: [
+                    'cd /var/www/code-louisville',
+                    'git pull origin master',
+                    'npm install',
+                    // 'forever stop server.js',
+                    // 'forever start server.js',
+                    // 'forever list',
+                ].join(' && '),
+                options: {
+                    config: 'server',
+                },
+            },
+            deploy: {
+                command: [
+                    'cd /var/www/code-louisville',
+                    'git pull origin master',
+                    'npm install',
+                    // 'forever stop server.js',
+                    // 'forever start server.js',
+                    // 'forever list',
+                ].join(' && '),
+                options: {
+                    config: 'server',
+                },
+            },
+        }
+
     });
 
     // Load multiple grunt tasks using globbing patterns
@@ -39,7 +80,13 @@ module.exports = function(grunt) {
     // Notify if error
     grunt.loadNpmTasks('grunt-notify');
 
-    // Run tasks
+    // Run frontend tasks
     grunt.registerTask('default',['watch']);
+
+    // Run build task
+    grunt.registerTask('build',['sshexec:deploy']);
+
+    // Run deploy task
+    grunt.registerTask('deploy',['sshexec:deploy']);
 
 }
