@@ -55,7 +55,7 @@ module.exports = function(grunt) {
                 ].join(' && '),
                 options: {
                     config: 'server',
-                },
+                }
             },
             deploy: {
                 command: [
@@ -82,7 +82,15 @@ module.exports = function(grunt) {
                     host: "erowan@162.243.105.72"
                 }
             }
-        }
+        },
+
+        // Remove /content folder and then rebuild
+        // clean: {
+        //     build {
+        //         src: ["/var/www/code-louisville/content"]
+        //     }
+        // }
+
 
     });
 
@@ -96,7 +104,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default',['watch']);
 
     // Run build task
-    grunt.registerTask('build',['rsync:stage','sshexec:build']);
+    grunt.registerTask('build',['clean','rsync:stage','sshexec:build']);
 
     // Run deploy task
     grunt.registerTask('deploy',['rsync:prod','sshexec:deploy']);
